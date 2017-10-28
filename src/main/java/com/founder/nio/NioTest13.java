@@ -39,12 +39,15 @@ public class NioTest13 {
 
         System.out.println("=================================");
 
-        Charset charset = Charset.forName("utf-8");
+        Charset charset = Charset.forName("ISO-8859-1");
         CharsetDecoder charsetDecoder = charset.newDecoder();
         CharsetEncoder charsetEncoder = charset.newEncoder();
 
         CharBuffer charBuffer = charsetDecoder.decode(inputData);
+        System.out.println(charBuffer);
+
         ByteBuffer outputData = charsetEncoder.encode(charBuffer);
+        //ByteBuffer outputData = Charset.forName("utf-8").encode(charBuffer);
 
         outputFileChannel.write(outputData);
 
