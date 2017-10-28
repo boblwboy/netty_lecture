@@ -71,13 +71,11 @@ public class NioServer {
                                 }
 
                                 for (Map.Entry<String, SocketChannel> entry : clientMap.entrySet()) {
-                                    if (senderKey != entry.getKey()) {
-                                        SocketChannel value = entry.getValue();
-                                        ByteBuffer writeBuffer = ByteBuffer.allocate(1024);
-                                        writeBuffer.put((senderKey + ": " + receiveMessage).getBytes());
-                                        writeBuffer.flip();
-                                        value.write(writeBuffer);
-                                    }
+                                    SocketChannel value = entry.getValue();
+                                    ByteBuffer writeBuffer = ByteBuffer.allocate(1024);
+                                    writeBuffer.put((senderKey + ": " + receiveMessage).getBytes());
+                                    writeBuffer.flip();
+                                    value.write(writeBuffer);
 
                                 }
                             }
