@@ -10,7 +10,7 @@ public class OldIOClient {
 
         Socket socket = new Socket("localhost",8899);
 
-        String fileName = "/Users/bob/Downloads/movie/Gantz.O.2016.1080p.BluRay.DTS.x264-HDS/Gantz.O.2016.1080p.BluRay.DTS.x264-HDS.mkv";
+        String fileName = "/Users/bob/Downloads/movie/电脑狂人.Halt.and.Catch.Fire.S04E10.End.中英字幕.WEB-HR.AAC.720P.x264-人人影视.mp4";
 
         InputStream inputStream = new FileInputStream(fileName);
 
